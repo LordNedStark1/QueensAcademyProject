@@ -1,11 +1,13 @@
 package academy.queens.queensacademy.models;
 
-import jakarta.persistence.Id;
+
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+@Document
 public class Teacher {
-    @Id
+
     private String id;
     private String name;
     private String email;
