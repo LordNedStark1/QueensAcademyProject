@@ -1,25 +1,43 @@
 package academy.queens.queensacademy.StudentServiceTest;
 
-import academy.queens.queensacademy.dtos.StudentApplicationRequest;
-import academy.queens.queensacademy.services.StudentServiceImpl;
+
+import academy.queens.queensacademy.dtos.requests.ApplicationRequest;
+import academy.queens.queensacademy.dtos.response.ApplicationResponse;
+import academy.queens.queensacademy.models.Admin;
+import academy.queens.queensacademy.services.QueensAcademyStudentService;
 import academy.queens.queensacademy.services.StudentServiceInterface;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+;
 
-@SpringBootTest
+
 public class StudentServiceTest {
 
     private StudentServiceInterface studentServiceInterface ;
-    private StudentApplicationRequest studentApplicationRequest;
+    private ApplicationRequest studentApplicationRequest;
+    private Admin admin ;
     @BeforeEach
     private void setup() {
-        studentServiceInterface = new StudentServiceImpl();
-        studentApplicationRequest = new StudentApplicationRequest();
+        studentServiceInterface =new QueensAcademyStudentService();
+        studentApplicationRequest =  mapApplicationRequest();
+        admin = new Admin();
+        admin.setAdmin(true);
     }
+
+    private ApplicationRequest mapApplicationRequest() {
+        ApplicationRequest applicationRequest = new ApplicationRequest();
+        applicationRequest.setEmail("test@example.com");
+        applicationRequest.setPassword("Password1@");
+        applicationRequest.setFirstName("student");
+        applicationRequest.setLastName("Test");
+
+        return applicationRequest;
+    }
+
     @Test
     public void testStudentCanApply(){
-        studentServiceInterface.apply()
+       ApplicationResponse response = studentServiceInterface.studentApplication(studentApplicationRequest);
+
+
     }
 }

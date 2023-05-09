@@ -11,17 +11,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
+
 @Document
 @AllArgsConstructor
 @Builder
-public class Student {
+public class Student extends User {
 
     private String studentId;
     private String firstName;
     private String lastName;
     private String password;
     private String email;
+    private  boolean isStudent;
     private List<String> reportSheetIds = new ArrayList<>();
 
 }

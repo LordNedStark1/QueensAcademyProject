@@ -4,8 +4,10 @@ import lombok.Data;
 
 @Data
 
-public class StudentApplicationRequest {
-    private String studentName;
+public class ApplicationRequest {
+    private String firstName;
+    private String lastName;
     private String password;
     private String email;
+
 }

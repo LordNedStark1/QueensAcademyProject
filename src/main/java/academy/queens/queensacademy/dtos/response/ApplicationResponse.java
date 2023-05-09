@@ -1,9 +1,13 @@
 package academy.queens.queensacademy.dtos.response;
 
-import lombok.Data;
+import lombok.*;
 
 @Data
-public class StudentApplicationResponse {
+@Builder
+@AllArgsConstructor
+
+@RequiredArgsConstructor
+public class ApplicationResponse {
     private String id;
     private String firstName;
     private String lastName;

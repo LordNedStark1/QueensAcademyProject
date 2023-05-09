@@ -1,14 +1,19 @@
 package academy.queens.queensacademy.models;
 
-import jakarta.persistence.Id;
-import lombok.Data;
+import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Document
+@Builder
+
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class ReportSheet {
-    @Id
+
     private String reportSheetId;
-    private List<String> examId = new ArrayList<String>();
+    private List<String> examId = new ArrayList<>();
 }

@@ -1,8 +1,8 @@
 package academy.queens.queensacademy.services;
 
-import academy.queens.queensacademy.dtos.requests.StudentApplicationRequest;
-import academy.queens.queensacademy.dtos.response.StudentApplicationResponse;
+import academy.queens.queensacademy.dtos.requests.ApplicationRequest;
+import academy.queens.queensacademy.dtos.response.ApplicationResponse;
 
 public interface StudentServiceInterface {
-    public StudentApplicationResponse studentApplication(StudentApplicationRequest studentApplicationRequest);
+    public ApplicationResponse studentApplication(ApplicationRequest studentApplicationRequest);
 }
